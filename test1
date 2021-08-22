@@ -1,0 +1,20 @@
+public class seleniumScript1 {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.driver", "C:\\Users\\Bartak\\Desktop\\Soubory\\Selenium Firefox Driver\\geckodriver.exe");
+		FirefoxDriver driver = new FirefoxDriver();
+		driver.get("https://jisho.org/");
+		driver.manage().window().maximize();
+		Thread.sleep(2500);
+		driver.findElement(By.id("keyword")).sendKeys("shiraberu");
+		Thread.sleep(2500);
+		driver.findElemnent(By.className("icon search-icon")).click();
+		Thread.sleep(2500);
+		driver.navigate().back();
+		Thread.sleep(2500);
+		driver.findElement(By.id("keyword")).sendKeys("kakugo");
+		Thread.sleep(2500);
+		driver.quit();
+	}
+
+}
